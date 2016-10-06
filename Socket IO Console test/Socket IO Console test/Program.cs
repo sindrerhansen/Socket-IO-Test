@@ -1,21 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
 using Quobject.SocketIoClientDotNet.Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Socket_IO_Console_test
 {
     class Program
     {
         private static bool life=true;
-        private static Socket socket;
+
         static void Main(string[] args)
         {
             // connect to a Socket.IO server
-            socket = IO.Socket("http://93.89.117.144/");
+            var socket = IO.Socket("http://93.89.117.144/");
             socket.Connect();
             socket.On("chat message", data => {
                 var jobject = data as JToken;
