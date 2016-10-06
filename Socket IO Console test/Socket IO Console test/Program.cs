@@ -22,7 +22,7 @@ namespace Socket_IO_Console_test
             {
                 JObject json = JObject.Parse(data.ToString());
                 var value= (string)json["value"];
-                Console.WriteLine("Value: " + value + "   At time" + DateTime.Now.ToLongTimeString());
+                Console.WriteLine("Value: " + value + "   At time: " + DateTime.Now.ToLongTimeString());
             });
             socket.On("connection", data => {
                 // get the json data from the server message
